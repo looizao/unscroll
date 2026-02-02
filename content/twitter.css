@@ -1,0 +1,30 @@
+/* X/Twitter - hide algorithmic content when unscroll is active */
+
+/* Trending sidebar */
+html.unscroll-active [aria-label="Timeline: Trending now"] {
+  display: none !important;
+}
+
+/* Who to follow sidebar */
+html.unscroll-active [aria-label="Who to follow"] {
+  display: none !important;
+}
+
+/* All sidebar sections (trends, follow suggestions, etc.) */
+html.unscroll-active [data-testid="sidebarColumn"] section {
+  display: none !important;
+}
+
+/* Explore link in sidebar nav */
+html.unscroll-active a[href="/explore"],
+html.unscroll-active a[data-testid="AppTabBar_Explore_Link"] {
+  display: none !important;
+}
+
+/* Hide timeline initially to prevent "For you" flash - JS will un-hide once Following is active */
+html.unscroll-active [data-testid="primaryColumn"] [aria-label="Timeline: Your Home Timeline"] {
+  visibility: hidden;
+}
+html.unscroll-active.unscroll-twitter-ready [data-testid="primaryColumn"] [aria-label="Timeline: Your Home Timeline"] {
+  visibility: visible;
+}

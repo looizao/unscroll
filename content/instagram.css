@@ -1,0 +1,13 @@
+/* Instagram - hide algorithmic content when unscroll is active */
+
+/* Explore nav link */
+html.unscroll-active a[href="/explore/"],
+html.unscroll-active a[href="/explore"] {
+  display: none !important;
+}
+
+/* Reels nav link */
+html.unscroll-active a[href="/reels/"],
+html.unscroll-active a[href="/reels"] {
+  display: none !important;
+}

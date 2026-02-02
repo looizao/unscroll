@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "Unscroll",
+  "version": "1.0",
+  "description": "Remove algorithmic feeds and infinite scroll from YouTube, Instagram, and X.",
+  "permissions": ["storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "icons": {
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "css": ["content/youtube.css"],
+      "js": ["content/shared.js", "content/youtube.js"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["*://*.x.com/*", "*://*.twitter.com/*"],
+      "css": ["content/twitter.css"],
+      "js": ["content/shared.js", "content/twitter.js"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["*://*.instagram.com/*"],
+      "css": ["content/instagram.css"],
+      "js": ["content/shared.js", "content/instagram.js"],
+      "run_at": "document_start"
+    }
+  ]
+}

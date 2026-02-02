@@ -1,0 +1,43 @@
+/* YouTube - hide algorithmic content when unscroll is active */
+
+/* Home feed content */
+html.unscroll-active ytd-browse[page-subtype="home"] ytd-rich-grid-renderer,
+html.unscroll-active ytd-browse[page-subtype="home"] ytd-two-column-browse-results-renderer {
+  display: none !important;
+}
+
+/* Shorts shelf on any page */
+html.unscroll-active ytd-reel-shelf-renderer,
+html.unscroll-active ytd-rich-shelf-renderer[is-shorts] {
+  display: none !important;
+}
+
+/* Shorts overlay badges on thumbnails */
+html.unscroll-active ytd-thumbnail-overlay-time-status-renderer[overlay-style="SHORTS"] {
+  display: none !important;
+}
+
+/* Sidebar: Home link (already redirected, but hide for clarity) */
+html.unscroll-active ytd-guide-entry-renderer a[href="/"],
+html.unscroll-active ytd-mini-guide-entry-renderer a[href="/"] {
+  display: none !important;
+}
+
+/* Sidebar: Shorts link */
+html.unscroll-active ytd-guide-entry-renderer a[title="Shorts"],
+html.unscroll-active ytd-mini-guide-entry-renderer a[title="Shorts"] {
+  display: none !important;
+}
+
+/* Sidebar: Trending / Explore */
+html.unscroll-active ytd-guide-entry-renderer a[href="/feed/trending"],
+html.unscroll-active ytd-guide-entry-renderer a[href="/feed/explore"],
+html.unscroll-active ytd-mini-guide-entry-renderer a[href="/feed/trending"],
+html.unscroll-active ytd-mini-guide-entry-renderer a[href="/feed/explore"] {
+  display: none !important;
+}
+
+/* Shorts tab on channel pages */
+html.unscroll-active yt-tab-shape[tab-title="Shorts"] {
+  display: none !important;
+}
